@@ -1,2 +1,2 @@
-# CSS Visualizer
-## https://css-is-js.vercel.app/
+# Visualizer
+## https://visua-lization.vercel.app/
