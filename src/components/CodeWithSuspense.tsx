@@ -1,7 +1,7 @@
 import React, { Suspense, useEffect, useState } from "react";
 import CodePreviewAndEdit from "./CodePreviewAndEdit";
 import { useSearchParams } from "next/navigation";
-import { options } from "../lib/options";
+import { cssSelectOptions } from "../utils/css-options";
 import infiniteCarousel from "./css-visualization/infinite-carousel";
 import duckHuntGame from "./css-visualization/duck-hunt-game";
 import clock from "./css-visualization/clock";

@@ -26,21 +26,21 @@ export const PageHeader = () => {
                         </span>
                     </Link>
                     <nav className="nav flex gap-3 text-[15px] text-slate-500 mx-32">
-                        <Link href={"/canvas-visual"} className={` flex items-center gap-1 py-2 px-4 rounded-sm ${pathname === "/canvas-visual" && "bg-emerald-600 text-lime-50"}`}>
+                        <Link href={"/canvas-visual"} className={` flex items-center gap-1 py-2 px-4 rounded-[3px] ${pathname === "/canvas-visual" && "bg-emerald-600 text-lime-50"}`}>
                             <BsFiletypeHtml />
                             Canvas
                         </Link>
-                        <Link href={"/css-visual"} className={` flex items-center gap-1 py-2 px-4 rounded-sm ${pathname === "/css-visual" && "bg-purple-600 text-purple-50"}`}>
+                        <Link href={"/css-visual"} className={` flex items-center gap-1 py-2 px-4 rounded-[3px] ${pathname === "/css-visual" && "bg-purple-600 text-purple-50"}`}>
                             <RiCss3Line />
                             CSS
                         </Link>
-                        {/* <Link
+                        <Link
                             href={"/svg-visual"}
-                            className={`hover:text-rose-600 dark:text-slate-400 flex items-center gap-1 py-2 px-4 rounded-sm ${pathname === "/svg-visual" && "bg-blue-500 text-blue-50"}`}
+                            className={`flex items-center gap-1 py-2 px-4 rounded-[3px] ${pathname === "/svg-visual" && "bg-blue-500 text-blue-50"}`}
                         >
                             <BsFiletypeSvg />
                             SVG
-                        </Link> */}
+                        </Link>
                     </nav>
                     <div className="social-connections flex items-center gap-3 text-slate-500">
                         <DarkModeToggle onChange={(bool) => setTheme(bool ? "dark" : "light")} checked={theme === "dark"} size={60} />

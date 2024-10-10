@@ -12,9 +12,10 @@ interface Option {
 interface OptionsProps {
     options: Option[];
     className?: string;
+    callback: (option: Option | null) => void;
 }
 
-export const SelectOpt: React.FC<OptionsProps> = ({ options = [], className = "" }) => {
+export const SelectOpt: React.FC<OptionsProps> = ({ options = [], className = "", callback = () => {} }) => {
     const router = useRouter();
     const searchParams = useSearchParams();
     const [selected, setSelected] = useState<Option | null>({ value: "infinite-carousel", label: "Infinite Carousel" });
@@ -23,8 +24,8 @@ export const SelectOpt: React.FC<OptionsProps> = ({ options = [], className = ""
     type OptionType = { label: string; value: string | number } | null;
     // Adjust the type of value to match the Option interface
     const handleOptionChange = (option: { label: string; value: string | number } | null) => {
-        const { value } = option || {};
-        router.push(`/css-visual?slug=${value}`);
+        // Check if callback exists before calling it
+        if (callback) callback(option); // Calls the callback with the selected option
     };
 
     useEffect(() => {

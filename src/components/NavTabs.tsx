@@ -1,22 +1,33 @@
 "use client";
 import React, { useState, useEffect, Suspense } from "react";
+import { useRouter } from "next/navigation";
 import { SelectOpt } from "./SelectOpt";
-import { options } from "../lib/options";
+import { cssSelectOptions } from "../utils/css-options";
 
 interface Props {
     cb?: (value: number | null) => void; // Adjusting cb to allow number or null
 }
 
 export const NavTabs: React.FC<Props> = ({ cb = () => {} }) => {
+    const router = useRouter();
     const [active, setActive] = useState<number | null>(1);
 
     useEffect(() => {
         if (cb) cb(active);
     }, [active, cb]); // Adding active as a dependency so cb is called when it changes
 
+    // Set the active tab when clicked˝
     const handleTabClick = (tabIndex: number) => {
         setActive(tabIndex);
-        // Set the active tab when clicked
+    };
+
+    /**
+     * description :- handleOptionChange
+     * created_at:- 10/10/2024 17:18:33
+     */
+    const handleOptionChange = (option: { label: string; value: string | number } | null) => {
+        const { value } = option || {};
+        router.push(`/css-visual?slug=${value}`);
     };
 
     return (
@@ -42,7 +53,7 @@ export const NavTabs: React.FC<Props> = ({ cb = () => {} }) => {
             <div className="ms-auto pb-2 flex items-center gap-2">
                 <p className="text-lg">Select Option:</p>
                 <Suspense fallback={<p>Loading...</p>}>
-                    <SelectOpt className="w-72" options={options} />
+                    <SelectOpt className="w-72" options={cssSelectOptions} callback={handleOptionChange} />
                 </Suspense>
             </div>
         </div>

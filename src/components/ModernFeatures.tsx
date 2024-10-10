@@ -32,7 +32,7 @@ export const ModernFeatures = () => {
                         Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel voluptatibus, eos dolores atque maxime commodi quisquam architecto necessitatibus consequatur odit consequuntur
                         explicabo est aliquid illum
                     </p>
-                </div>˝
+                </div>
             </div>
         </div>
     );

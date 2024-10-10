@@ -8,7 +8,7 @@ const page = () => {
             <div className="container">
                 <header className="mb-14 text-center py-10">
                     <h2 className="text-6xl font-light mb-5">
-                        No need to use javascript <br/> even a single line!
+                        No need to use <span className="underline">javascript</span> <br/> even a single line!
                     </h2> 
                     <p className="text-xl">CSS, crafting seamless web experiences! </p>
                 </header>
