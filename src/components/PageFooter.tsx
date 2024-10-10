@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import LOGO from "../images/v-logo-3.png";
+import LOGO from "../images/v-logo-2.png";
 import Link from "next/link";
 
 export const PageFooter = () => {
@@ -9,8 +9,8 @@ export const PageFooter = () => {
             <footer className="w-full py-10">
                 <div className="container text-center">
                     <Link href="/" className="inline-flex items-end font-black text-neutral-950 dark:text-blue-200">
-                        <Image src={LOGO} alt="logo" className="-mr-1 -mt-8 pb-1" width={100} height={100} />
-                        <span className="inline-block text-4xl font-black -ml-9">lsualization</span>
+                    <Image src={LOGO} alt="logo" className="" width={48} height={48} />
+                    <span className="inline-block text-4xl font-black">isualization</span>
                     </Link>
                     <ul className="text-lg flex items-center justify-center flex-col md:flex-row py-16 gap-6 md:gap-12 transition-all duration-500">
                         <li>
@@ -29,7 +29,7 @@ export const PageFooter = () => {
                             </Link>
                         </li>
                         <li>
-                            <Link href={"https://github.com/kawsarBinSiraj/visual"} target="_blank" className="text-gray-800 hover:text-indigo-600">
+                            <Link href={"https://github.com/kawsarBinSiraj/visualization"} target="_blank" className="text-gray-800 hover:text-indigo-600">
                                 Resources
                             </Link>
                         </li>

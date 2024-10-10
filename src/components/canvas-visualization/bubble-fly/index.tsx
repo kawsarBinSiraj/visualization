@@ -6,10 +6,9 @@ const CanvasBubbleFly: React.FC = () => {
     const canvasHeight: number = 500;
     const mouse: { x: number | undefined; y: number | undefined } = { x: undefined, y: undefined };
     // const minRadius: number = 5;
-    const [minRadius, setMinRadius] = useState<number>(5);
+    const [minRadius, setMinRadius] = useState<number>(10);
     const maxRadius: number = minRadius * 4;
     const hoverRange: number = 100;
-    // const circleSize: number = 300;
     const [circleSize, setCircleSize] = useState<number>(300);
     const [colors, setColors] = useState<string[]>(["#3a5a40", "#e63946", "#8ecae6", "#219ebc", "#023047", "#ffb703", "#f07167"]);
 
@@ -113,7 +112,7 @@ const CanvasBubbleFly: React.FC = () => {
 
         canvas.width = canvasWidth;
         canvas.height = canvasHeight;
-        canvas.style.border = "1px solid #1C7293";
+        canvas.style.border = "1px solid " + colors[0];
         canvas.style.borderRadius = "4px";
         const ctx = canvas.getContext("2d");
         if (!ctx) return; // Check if context is obtained
@@ -154,18 +153,6 @@ const CanvasBubbleFly: React.FC = () => {
     return (
         <div id="canvas-root" style={{ width: canvasWidth, minHeight: canvasHeight, margin: "auto", position: "relative" }}>
             <div className="controller flex items-center gap-4 mb-4">
-                <div className="">
-                    <div className="form-group flex gap-2 items-center">
-                        <label>Bubble Size: </label>
-                        <input type="range" onChange={(e) => setMinRadius(Number(e.target.value))} value={minRadius} min={1} max={50} />
-                        <label>{minRadius}</label>
-                    </div>
-                    <div className="form-group flex gap-2 items-center">
-                        <label>Number of Circle: </label>
-                        <input type="range" onChange={(e) => setCircleSize(Number(e.target.value))} value={circleSize} min={1} max={2000} />
-                        <label>{circleSize}</label>
-                    </div>
-                </div>
                 <div className="form-group flex gap-2 items-center">
                     <label>Color: </label>
                     <button
@@ -178,6 +165,18 @@ const CanvasBubbleFly: React.FC = () => {
                     >
                         Generate random
                     </button>
+                </div>
+                <div className="orm-group">
+                    <div className="form-group flex gap-2 items-center">
+                        <label>Bubble Size: </label>
+                        <input type="range" onChange={(e) => setMinRadius(Number(e.target.value))} value={minRadius} min={1} max={50} />
+                        <label>{minRadius}</label>
+                    </div>
+                    <div className="form-group flex gap-2 items-center">
+                        <label>Number of Circle: </label>
+                        <input type="range" onChange={(e) => setCircleSize(Number(e.target.value))} value={circleSize} min={1} max={2000} />
+                        <label>{circleSize}</label>
+                    </div>
                 </div>
             </div>
             <canvas id="canvas"></canvas>

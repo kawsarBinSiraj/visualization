@@ -12,7 +12,7 @@
     }
 }
 .origin {
-    --origin-clr: #e21d483c;
+    --origin-clr: #079a229d;
     width: 1em;
     height: 1em;
     font-size: 8vmin;
@@ -53,7 +53,7 @@
 .origin:after {
     -webkit-transform: scale(0.1);
     transform: scale(0.1);
-    background: #e21d49;
+    background-color: #000;
 }
 
 #toi {

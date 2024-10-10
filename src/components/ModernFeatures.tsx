@@ -1,9 +1,6 @@
 import React from "react";
-import { LuListTree } from "react-icons/lu";
-import { FaRunning } from "react-icons/fa";
-import { BsFiletypeHtml } from "react-icons/bs";
+import { BsFiletypeHtml, BsFiletypeSvg } from "react-icons/bs";
 import { RiCss3Line } from "react-icons/ri";
-import { BsFiletypeSvg } from "react-icons/bs";
 
 export const ModernFeatures = () => {
     return (

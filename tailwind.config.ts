@@ -20,20 +20,11 @@ const config: Config = {
             },
         },
         screens: {
-            'sm': '640px',
-            // => @media (min-width: 640px) { ... }
-      
-            'md': '768px',
-            // => @media (min-width: 768px) { ... }
-      
-            'lg': '991px',
-            // => @media (min-width: 991px) { ... }
-      
-            'xl': '1024px',
-            // => @media (min-width: 1024px) { ... }
-      
-            '2xl': '1200px',
-            // => @media (min-width: 1536px) { ... }
+            'sm': '480px',
+            'md': '640px',
+            'lg': '768px',
+            'xl': '991px',
+            '2xl': '1100px',
           }
     },
     plugins: [],
